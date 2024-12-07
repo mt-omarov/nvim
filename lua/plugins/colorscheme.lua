@@ -1,10 +1,10 @@
 return {
-  "craftzdog/solarized-osaka.nvim",
-  lazy = true,
-  priority = 1000,
-  opts = function()
-    return {
-      transparent = true,
-    }
+  "catppuccin/nvim",
+  lazy = false,
+  name = "catppuccin",
+  config = function()
+    require("catppuccin").setup({
+      flavour = "frappe",
+    })
   end,
 }

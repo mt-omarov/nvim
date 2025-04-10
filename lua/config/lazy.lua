@@ -31,7 +31,6 @@ require("lazy").setup({
         -- import any extras modules here
         { import = "lazyvim.plugins.extras.formatting.prettier" },
         { import = "lazyvim.plugins.extras.lang.clangd" },
-        { import = "lazyvim.plugins.extras.lang.markdown" },
         { import = "plugins" },
     },
 

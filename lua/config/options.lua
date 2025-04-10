@@ -8,3 +8,4 @@ vim.o.shiftwidth = 4
 
 vim.g.autoformat = false
 vim.o.clipboard = "unnamedplus"
+

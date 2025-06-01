@@ -48,8 +48,22 @@ return {
     {
         "iamcco/markdown-preview.nvim",
         event = "BufRead",
+
         build = function()
             vim.fn["mkdp#util#install"]()
+        end,
+
+        init = function()
+            vim.g.mkdp_filetypes = { "markdown" }
+        end,
+
+        config = function()
+            vim.keymap.set(
+                "n",
+                "<Leader>mp",
+                "<Plug>MarkdownPreview",
+                { desc = "Mardown Preview" }
+            )
         end
     },
 

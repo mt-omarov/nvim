@@ -49,12 +49,11 @@ return {
         "iamcco/markdown-preview.nvim",
         event = "BufRead",
 
-        build = function()
-            vim.fn["mkdp#util#install"]()
-        end,
+        build = "cd app && npm install",
 
         init = function()
             vim.g.mkdp_filetypes = { "markdown" }
+            vim.g.mkdp_page_title = "${name}"
         end,
 
         config = function()
@@ -68,15 +67,6 @@ return {
     },
 
     {
-        "neovim/nvim-lspconfig",
-        opts = {
-            servers = {
-                marksman = {},
-            },
-        },
-    },
-
-    {
         "mfussenegger/nvim-lint",
         opts = {
             linters_by_ft = {
@@ -85,7 +75,7 @@ return {
             -- disable MD013 (string length)
             linters = {
                 markdownlinter = {
-                    args = { "--disable", "MD013", "--stdin" }
+                    args = { "--disable", "MD013", "--" }
                 }
             }
         },
